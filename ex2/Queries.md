@@ -51,10 +51,40 @@ CONSTRUCT {
 WHERE {
   ?patient a :Patient .
   ?Maindisease a :Disease .
-  ?instance a ?Maindisease.
-  ?instance :hasSymptom ?symptomI .
-  ?patient :exhibitsSymptom ?symptomP .
-    FILTER(?symptomI = ?symptomP)
+  
+  # Get the symptoms exhibited by the patient
+  {
+    SELECT ?patient (COUNT(?symptomP) AS ?patientSymptomCount)
+    WHERE {
+      ?patient :exhibitsSymptom ?symptomP .
+    }
+    GROUP BY ?patient
+  }
+  
+  # Get the symptoms associated with the disease
+  {
+    SELECT ?Maindisease (COUNT(?symptomI) AS ?diseaseSymptomCount)
+    WHERE {
+      ?instance a ?Maindisease .
+      ?instance :hasSymptom ?symptomI .
+    }
+    GROUP BY ?Maindisease
+  }
+  
+  # Get the matching symptoms
+  {
+    SELECT ?patient ?Maindisease (COUNT(?symptomI) AS ?matchingSymptomCount)
+    WHERE {
+      ?patient :exhibitsSymptom ?symptomP .
+      ?instance a ?Maindisease .
+      ?instance :hasSymptom ?symptomI .
+      FILTER(?symptomI = ?symptomP)
+    }
+    GROUP BY ?patient ?Maindisease
+  }
+  
+  # Ensure all symptoms match
+  FILTER (?matchingSymptomCount = ?patientSymptomCount && ?matchingSymptomCount = ?diseaseSymptomCount)
 }
 ```
 ## R: para inserir basta trocar o CONSTRUCT por um INSERT

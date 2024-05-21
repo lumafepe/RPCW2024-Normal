@@ -9,12 +9,6 @@ ids=0
 g=Graph()
 g.parse("medical.ttl")
 
-def get_uri(uri):
-    return uri.split("/")[-1]
-
-def create_uri(uri):
-    return uri.replace(" ","_").replace("\"","")
-
 namespace = Namespace("http://www.example.org/disease-ontology#")
 
 
