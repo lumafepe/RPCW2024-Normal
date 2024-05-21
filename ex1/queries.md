@@ -25,8 +25,7 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
 SELECT (COUNT(DISTINCT ?individual) AS ?numIndividuals)
 WHERE {
-  ?individual rdf:type ?type .
-  FILTER(?type != owl:Class && ?type != owl:ObjectProperty && ?type != owl:DatatypeProperty && ?type != owl:AnnotationProperty)
+  ?individual rdf:type owl:NamedIndividual .
 }
 ```
 
