@@ -1,0 +1,442 @@
+@prefix : <http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48/> .
+
+<http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#ajuda
+:ajuda rdf:type owl:ObjectProperty ;
+       owl:inverseOf :éAjudadoPor ;
+       rdfs:domain :Pessoa ;
+       rdfs:range :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#ara
+:ara rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf owl:topObjectProperty ;
+     owl:inverseOf :éAradoPor ;
+     rdfs:domain :Trator ;
+     rdfs:range :Fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#casadoCom
+:casadoCom rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :casadoCom ;
+           rdfs:domain :Pessoa ;
+           rdfs:range :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#contrata
+:contrata rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :éContratadoPor ;
+          rdfs:domain :Agricultor ;
+          rdfs:range :TrabalhadorTemporario .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#cria
+:cria rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      owl:inverseOf :éCriadoPor ;
+      rdfs:domain :Fazenda ;
+      rdfs:range :Animal .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#cultiva
+:cultiva rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :éCultivadoPor ;
+         rdfs:domain :Fazenda ;
+         rdfs:range :Fruta ,
+                    :Vegetais .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#parentescoAscendente
+:parentescoAscendente rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf owl:topObjectProperty ;
+                      owl:inverseOf :parentescoDescendente .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#parentescoDescendente
+:parentescoDescendente rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf owl:topObjectProperty ;
+                       rdfs:domain :Pessoa ;
+                       rdfs:range :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#planta
+:planta rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        owl:inverseOf :éPlantadoPor ;
+        rdfs:domain :Trator ;
+        rdfs:range :Fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#proprietario
+:proprietario rdf:type owl:ObjectProperty ;
+              owl:inverseOf :éPropriedadeDe ;
+              rdfs:domain :Agricultor ;
+              rdfs:range :Fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#protege
+:protege rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :éProtegidaPor ;
+         rdfs:domain :Cão ;
+         rdfs:range :Fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#trocaProdutos
+:trocaProdutos rdf:type owl:ObjectProperty ;
+               owl:inverseOf :trocaProdutos ;
+               rdfs:domain :Agricultor ;
+               rdfs:range :Agricultor .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#vende
+:vende rdf:type owl:ObjectProperty ;
+       rdfs:subPropertyOf owl:topObjectProperty ;
+       owl:inverseOf :éVendidoPor ;
+       rdfs:domain :Pessoa ;
+       rdfs:range :Feira .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#viveEm
+:viveEm rdf:type owl:ObjectProperty ;
+        owl:inverseOf :éVividoPor ;
+        rdfs:domain :Pessoa ;
+        rdfs:range :Localização .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#vizinho
+:vizinho rdf:type owl:ObjectProperty ;
+         owl:inverseOf :vizinho ;
+         rdfs:domain :Pessoa ;
+         rdfs:range :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#éAjudadoPor
+:éAjudadoPor rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#éAradoPor
+:éAradoPor rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#éContratadoPor
+:éContratadoPor rdf:type owl:ObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#éCriadoPor
+:éCriadoPor rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:range :Fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#éCultivadoPor
+:éCultivadoPor rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:range :Fazenda .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#éPlantadoPor
+:éPlantadoPor rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#éPropriedadeDe
+:éPropriedadeDe rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#éProtegidaPor
+:éProtegidaPor rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#éVendidoPor
+:éVendidoPor rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#éVividoPor
+:éVividoPor rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#diaFeira
+:diaFeira rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :Feira ;
+          rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#nome
+:nome rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Pessoa ;
+      rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#nomeCachoro
+:nomeCachoro rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Cão ;
+             rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#nomeFeira
+:nomeFeira rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Feira ;
+           rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#nomeLocalização
+:nomeLocalização rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Localização ;
+                 rdfs:range xsd:string .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#salárioHora
+:salárioHora rdf:type owl:DatatypeProperty ;
+             rdfs:domain :TrabalhadorTemporario ;
+             rdfs:range xsd:decimal .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#sexo
+:sexo rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:domain :Pessoa ;
+                    rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Agricultor
+:Agricultor rdf:type owl:Class ;
+            rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Animal
+:Animal rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Cão
+:Cão rdf:type owl:Class ;
+     rdfs:subClassOf :Animal .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Fazenda
+:Fazenda rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Feira
+:Feira rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Fruta
+:Fruta rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Geleia
+:Geleia rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Localização
+:Localização rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Pessoa
+:Pessoa rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#TrabalhadorTemporario
+:TrabalhadorTemporario rdf:type owl:Class ;
+                       rdfs:subClassOf :Pessoa .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Trator
+:Trator rdf:type owl:Class .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Vegetais
+:Vegetais rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Alfaces
+:Alfaces rdf:type owl:NamedIndividual .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Ana
+:Ana rdf:type owl:NamedIndividual ,
+              :Pessoa ;
+     :ajuda :SraMaria ;
+     :parentescoDescendente :SrJoão ,
+                            :SraMaria ;
+     :nome "Ana" ;
+     :sexo "feminino" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Bananas
+:Bananas rdf:type owl:NamedIndividual ,
+                  :Fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Cenouras
+:Cenouras rdf:type owl:NamedIndividual ,
+                   :Vegetais .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#FazendaSrCarlos
+:FazendaSrCarlos rdf:type owl:NamedIndividual ;
+                 :cultiva :Alfaces ,
+                          :Cenouras ,
+                          :Tomates ;
+                 :trocaProdutos :SrJoão ;
+                 :éPropriedadeDe :SrCarlos .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Fazenda_SrJõao
+:Fazenda_SrJõao rdf:type owl:NamedIndividual ,
+                         :Fazenda ;
+                :cria :Galinhas ,
+                      :Porcos ,
+                      :Vacas ;
+                :cultiva :Bananas ,
+                         :Laranjas ,
+                         :Maças .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#FeiraDeSãoJosé
+:FeiraDeSãoJosé rdf:type owl:NamedIndividual ;
+                :diaFeira "Sabado" ;
+                :nomeFeira "Feira de São José" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Galinhas
+:Galinhas rdf:type owl:NamedIndividual ,
+                   :Animal .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Geleias
+:Geleias rdf:type owl:NamedIndividual ,
+                  :Geleia .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Laranjas
+:Laranjas rdf:type owl:NamedIndividual ,
+                   :Fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Maças
+:Maças rdf:type owl:NamedIndividual ,
+                :Fruta .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Pedro
+:Pedro rdf:type owl:NamedIndividual ,
+                :Pessoa ;
+       :ajuda :SrJoão ;
+       :parentescoDescendente :SrJoão ,
+                              :SraMaria ;
+       :nome "pedro" ;
+       :sexo "masculino" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Porcos
+:Porcos rdf:type owl:NamedIndividual ,
+                 :Animal .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Rex
+:Rex rdf:type owl:NamedIndividual ,
+              :Cão ;
+     :protege :Fazenda_SrJõao ;
+     :nomeCachoro "Rex" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#SrCarlos
+:SrCarlos rdf:type owl:NamedIndividual ,
+                   :Agricultor ;
+          :vende :FeiraDeSãoJosé ;
+          :vizinho :SrJoão ;
+          :nome "Carlos" ;
+          :sexo "masculino" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#SrJoão
+:SrJoão rdf:type owl:NamedIndividual ,
+                 :Agricultor ;
+        :casadoCom :SraMaria ;
+        :contrata :TrabalhadoresTemporarios ;
+        :proprietario :Fazenda_SrJõao ;
+        :trocaProdutos :SrCarlos ;
+        :vende :FeiraDeSãoJosé ;
+        :viveEm :vila_de_São_José ;
+        :nome "João" ;
+        :sexo "masculino" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#SraMaria
+:SraMaria rdf:type owl:NamedIndividual ,
+                   :Pessoa ;
+          :vende :FeiraDeSãoJosé ;
+          :nome "Maria" ;
+          :sexo "feminino" .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Tomates
+:Tomates rdf:type owl:NamedIndividual ,
+                  :Vegetais .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#TrabalhadoresTemporarios
+:TrabalhadoresTemporarios rdf:type owl:NamedIndividual ,
+                                   :TrabalhadorTemporario ;
+                          :salárioHora 10 .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Trator
+:Trator rdf:type owl:NamedIndividual ,
+                 :Trator ;
+        :ara :Fazenda_SrJõao ;
+        :planta :Fazenda_SrJõao .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#Vacas
+:Vacas rdf:type owl:NamedIndividual ,
+                :Animal .
+
+
+###  http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#vila_de_São_José
+:vila_de_São_José rdf:type owl:NamedIndividual ,
+                           :Localização ;
+                  :nomeLocalização "São José" .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
