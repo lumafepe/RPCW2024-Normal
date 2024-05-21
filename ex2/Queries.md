@@ -116,7 +116,7 @@ GROUP BY ?symptom
 SELECT ?treatment (COUNT(DISTINCT ?disease) AS ?numberOfDiseases)
 WHERE {
     ?disease a :Disease.
-    ?disease :hasTreatment ?symptom .
+    ?disease :hasTreatment ?treatment .
 }
 GROUP BY ?treatment
 ```
