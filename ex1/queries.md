@@ -30,7 +30,7 @@ WHERE {
 ```
 
 # 4. Quem planta tomates?
-PREFIX ex: <http://example.org/ontology#>
+PREFIX ex: <http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#>
 ```
 SELECT ?who
 WHERE {
@@ -39,7 +39,7 @@ WHERE {
 ```
 # 5. Quem contrata trabalhadores temporários?
 ```
-PREFIX ex: <http://example.org/ontology#>
+PREFIX ex: <http://rpcw.di.uminho.pt/2024/2024/4/untitled-ontology-48#>
 
 SELECT ?who
 WHERE {
